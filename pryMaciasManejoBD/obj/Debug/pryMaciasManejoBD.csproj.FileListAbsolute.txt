@@ -1,0 +1,23 @@
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.exe.config
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.exe
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.pdb
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmMain.resources
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.Properties.Resources.resources
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.exe
+C:\Users\Alumno\source\repos\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.pdb
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.exe.config
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.exe
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\bin\Debug\pryMaciasManejoBD.pdb
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.AssemblyReference.cache
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.SuggestedBindingRedirects.cache
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmMain.resources
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.Properties.Resources.resources
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.GenerateResource.cache
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.csproj.CoreCompileInputs.cache
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.exe
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.pdb
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmConsultas.resources
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmRegistrarEmpleado.resources

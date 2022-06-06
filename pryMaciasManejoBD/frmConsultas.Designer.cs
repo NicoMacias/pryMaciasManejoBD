@@ -45,6 +45,7 @@
             // cboTablas
             // 
             this.cboTablas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTablas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTablas.FormattingEnabled = true;
             this.cboTablas.Items.AddRange(new object[] {

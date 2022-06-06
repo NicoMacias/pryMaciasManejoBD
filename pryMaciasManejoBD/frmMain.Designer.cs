@@ -33,12 +33,16 @@ namespace pryMaciasManejoBD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mstMenu = new System.Windows.Forms.MenuStrip();
             this.tsmMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmConsultar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRegistrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmBasesDeDatos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.sstFecha = new System.Windows.Forms.StatusStrip();
             this.tslFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrFecha = new System.Windows.Forms.Timer(this.components);
+            this.chbMusica = new System.Windows.Forms.CheckBox();
+            this.lblMusica = new System.Windows.Forms.Label();
             this.mstMenu.SuspendLayout();
             this.sstFecha.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +52,12 @@ namespace pryMaciasManejoBD
             this.mstMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mstMenu.Font = new System.Drawing.Font("Arial", 12F);
             this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmMenu});
+            this.tsmMenu,
+            this.consultasToolStripMenuItem,
+            this.tsmSalir});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
-            this.mstMenu.Size = new System.Drawing.Size(773, 30);
+            this.mstMenu.Size = new System.Drawing.Size(746, 30);
             this.mstMenu.TabIndex = 3;
             this.mstMenu.Text = "menuStrip1";
             // 
@@ -59,47 +65,64 @@ namespace pryMaciasManejoBD
             // 
             this.tsmMenu.BackColor = System.Drawing.Color.Transparent;
             this.tsmMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmConsultar,
-            this.tsmRegistrar,
-            this.tsmSalir});
+            this.tsmRegistrar});
             this.tsmMenu.Font = new System.Drawing.Font("Arial", 14F);
             this.tsmMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.tsmMenu.Name = "tsmMenu";
-            this.tsmMenu.Size = new System.Drawing.Size(76, 26);
-            this.tsmMenu.Text = "MENU";
-            // 
-            // tsmConsultar
-            // 
-            this.tsmConsultar.Name = "tsmConsultar";
-            this.tsmConsultar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.tsmConsultar.Size = new System.Drawing.Size(365, 26);
-            this.tsmConsultar.Text = "Consultar Bases de Datos";
-            this.tsmConsultar.Click += new System.EventHandler(this.verBasesDeDatosToolStripMenuItem_Click);
+            this.tsmMenu.Size = new System.Drawing.Size(136, 26);
+            this.tsmMenu.Text = "REGISTRAR";
             // 
             // tsmRegistrar
             // 
             this.tsmRegistrar.Name = "tsmRegistrar";
             this.tsmRegistrar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.tsmRegistrar.Size = new System.Drawing.Size(365, 26);
+            this.tsmRegistrar.Size = new System.Drawing.Size(323, 26);
             this.tsmRegistrar.Text = "Registrar Empleados";
             this.tsmRegistrar.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmBasesDeDatos,
+            this.tsmPedidos});
+            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Arial", 14F);
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.consultasToolStripMenuItem.Text = "CONSULTAS";
+            // 
+            // tsmBasesDeDatos
+            // 
+            this.tsmBasesDeDatos.Name = "tsmBasesDeDatos";
+            this.tsmBasesDeDatos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.tsmBasesDeDatos.Size = new System.Drawing.Size(368, 26);
+            this.tsmBasesDeDatos.Text = "Consultar Bases De Datos";
+            this.tsmBasesDeDatos.Click += new System.EventHandler(this.cONSULTARBASESDEDATOSToolStripMenuItem_Click);
+            // 
+            // tsmPedidos
+            // 
+            this.tsmPedidos.Name = "tsmPedidos";
+            this.tsmPedidos.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.tsmPedidos.Size = new System.Drawing.Size(368, 26);
+            this.tsmPedidos.Text = "Consultar Pedidos";
+            this.tsmPedidos.Click += new System.EventHandler(this.tsmPedidos_Click);
+            // 
             // tsmSalir
             // 
+            this.tsmSalir.Font = new System.Drawing.Font("Arial", 14F);
             this.tsmSalir.Name = "tsmSalir";
             this.tsmSalir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.tsmSalir.Size = new System.Drawing.Size(365, 26);
-            this.tsmSalir.Text = "Salir";
-            this.tsmSalir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.tsmSalir.Size = new System.Drawing.Size(79, 26);
+            this.tsmSalir.Text = "SALIR";
+            this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
             // sstFecha
             // 
             this.sstFecha.BackColor = System.Drawing.Color.White;
             this.sstFecha.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslFecha});
-            this.sstFecha.Location = new System.Drawing.Point(0, 456);
+            this.sstFecha.Location = new System.Drawing.Point(0, 376);
             this.sstFecha.Name = "sstFecha";
-            this.sstFecha.Size = new System.Drawing.Size(773, 22);
+            this.sstFecha.Size = new System.Drawing.Size(746, 22);
             this.sstFecha.TabIndex = 4;
             this.sstFecha.Text = "statusStrip1";
             // 
@@ -112,12 +135,35 @@ namespace pryMaciasManejoBD
             // 
             this.tmrFecha.Tick += new System.EventHandler(this.tmrFecha_Tick);
             // 
+            // chbMusica
+            // 
+            this.chbMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbMusica.Location = new System.Drawing.Point(178, 193);
+            this.chbMusica.Name = "chbMusica";
+            this.chbMusica.Size = new System.Drawing.Size(13, 12);
+            this.chbMusica.TabIndex = 6;
+            this.chbMusica.UseVisualStyleBackColor = true;
+            this.chbMusica.CheckedChanged += new System.EventHandler(this.chbMusica_CheckedChanged);
+            // 
+            // lblMusica
+            // 
+            this.lblMusica.BackColor = System.Drawing.Color.Transparent;
+            this.lblMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusica.ForeColor = System.Drawing.Color.White;
+            this.lblMusica.Location = new System.Drawing.Point(26, 162);
+            this.lblMusica.Name = "lblMusica";
+            this.lblMusica.Size = new System.Drawing.Size(177, 56);
+            this.lblMusica.TabIndex = 7;
+            this.lblMusica.Text = "Pibe aca activas el modo boca ----->";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(773, 478);
+            this.ClientSize = new System.Drawing.Size(746, 398);
+            this.Controls.Add(this.chbMusica);
+            this.Controls.Add(this.lblMusica);
             this.Controls.Add(this.sstFecha);
             this.Controls.Add(this.mstMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -140,12 +186,16 @@ namespace pryMaciasManejoBD
         #endregion
         private System.Windows.Forms.MenuStrip mstMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsmConsultar;
         private System.Windows.Forms.ToolStripMenuItem tsmRegistrar;
-        private System.Windows.Forms.ToolStripMenuItem tsmSalir;
         private System.Windows.Forms.StatusStrip sstFecha;
         private System.Windows.Forms.ToolStripStatusLabel tslFecha;
         private System.Windows.Forms.Timer tmrFecha;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmBasesDeDatos;
+        private System.Windows.Forms.ToolStripMenuItem tsmPedidos;
+        private System.Windows.Forms.ToolStripMenuItem tsmSalir;
+        private System.Windows.Forms.CheckBox chbMusica;
+        private System.Windows.Forms.Label lblMusica;
     }
 }
 

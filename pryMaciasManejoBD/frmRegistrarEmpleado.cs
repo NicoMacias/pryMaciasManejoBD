@@ -29,7 +29,7 @@ namespace pryMaciasManejoBD
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            objConexion = new OleDbConnection();
+            OleDbConnection objConexion = new OleDbConnection();
 
             //MemoryStream ms = new MemoryStream();
             //ptbFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

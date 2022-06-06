@@ -21,3 +21,4 @@ C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMa
 C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.pdb
 C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmConsultas.resources
 C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmRegistrarEmpleado.resources
+C:\Users\nicom\Desktop\IES\Segundo Semestre\Laboratorio de Programacion II\pryMaciasManejoBD\pryMaciasManejoBD\obj\Debug\pryMaciasManejoBD.frmConsultarPedidos.resources

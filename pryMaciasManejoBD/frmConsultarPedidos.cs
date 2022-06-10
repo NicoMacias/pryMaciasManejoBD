@@ -26,30 +26,27 @@ namespace pryMaciasManejoBD
                 {
                     OleDbConnection connection = new OleDbConnection();
                     connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
-
                     connection.Open();
 
-                    string CADENA;
+                    string sql;
 
                     OleDbCommand command;
 
-                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
 
-                    CADENA = "select * from Pedidos WHERE FechaPedido BETWEEN @fechadesde AND @fechahasta";
-                    command = new OleDbCommand(CADENA, connection);
+                    sql = "select * from Pedidos WHERE FechaPedido BETWEEN @fechadesde AND @fechahasta";
+                    command = new OleDbCommand(sql, connection);
                     command.Parameters.AddWithValue("@fechadesde", dtpDesde.Value);
                     command.Parameters.AddWithValue("@fechahasta", dtpHasta.Value);
 
-                    adapter.SelectCommand = command;
+                    dataAdapter.SelectCommand = command;
 
-                    DataSet dataset = new DataSet();
-                    adapter.Fill(dataset, "tabla");
-                    dgvTablas.DataSource = dataset;
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet, "tabla");
+                    dgvTablas.DataSource = dataSet;
                     dgvTablas.DataMember = "tabla";
 
                     connection.Close();
-
-                    
                 }
                 catch (Exception)
                 {
@@ -64,7 +61,6 @@ namespace pryMaciasManejoBD
                 MessageBox.Show("En HASTA inserte una fecha mayor a la fecha que inserto en DESDE", "Error en el rango de fechas",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void tmrFecha_Tick(object sender, EventArgs e)

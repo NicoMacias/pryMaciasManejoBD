@@ -34,7 +34,7 @@ namespace pryMaciasManejoBD
             this.mstMenu = new System.Windows.Forms.MenuStrip();
             this.tsmMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRegistrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmConsultas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBasesDeDatos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +53,7 @@ namespace pryMaciasManejoBD
             this.mstMenu.Font = new System.Drawing.Font("Arial", 12F);
             this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmMenu,
-            this.consultasToolStripMenuItem,
+            this.tsmConsultas,
             this.tsmSalir});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
@@ -80,15 +80,15 @@ namespace pryMaciasManejoBD
             this.tsmRegistrar.Text = "Registrar Empleados";
             this.tsmRegistrar.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
+            // tsmConsultas
             // 
-            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmConsultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmBasesDeDatos,
             this.tsmPedidos});
-            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Arial", 14F);
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
-            this.consultasToolStripMenuItem.Text = "CONSULTAS";
+            this.tsmConsultas.Font = new System.Drawing.Font("Arial", 14F);
+            this.tsmConsultas.Name = "tsmConsultas";
+            this.tsmConsultas.Size = new System.Drawing.Size(137, 26);
+            this.tsmConsultas.Text = "CONSULTAS";
             // 
             // tsmBasesDeDatos
             // 
@@ -137,6 +137,7 @@ namespace pryMaciasManejoBD
             // 
             // chbMusica
             // 
+            this.chbMusica.Cursor = System.Windows.Forms.Cursors.No;
             this.chbMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbMusica.Location = new System.Drawing.Point(178, 193);
             this.chbMusica.Name = "chbMusica";
@@ -190,7 +191,7 @@ namespace pryMaciasManejoBD
         private System.Windows.Forms.StatusStrip sstFecha;
         private System.Windows.Forms.ToolStripStatusLabel tslFecha;
         private System.Windows.Forms.Timer tmrFecha;
-        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmConsultas;
         private System.Windows.Forms.ToolStripMenuItem tsmBasesDeDatos;
         private System.Windows.Forms.ToolStripMenuItem tsmPedidos;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;

@@ -89,7 +89,7 @@
             // 
             this.btnMostrarDGV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMostrarDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarDGV.Location = new System.Drawing.Point(522, 80);
+            this.btnMostrarDGV.Location = new System.Drawing.Point(488, 79);
             this.btnMostrarDGV.Name = "btnMostrarDGV";
             this.btnMostrarDGV.Size = new System.Drawing.Size(188, 30);
             this.btnMostrarDGV.TabIndex = 13;
@@ -103,23 +103,28 @@
             this.dgvTablas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablas.Location = new System.Drawing.Point(12, 157);
             this.dgvTablas.Name = "dgvTablas";
+            this.dgvTablas.ReadOnly = true;
             this.dgvTablas.Size = new System.Drawing.Size(776, 377);
             this.dgvTablas.TabIndex = 12;
             // 
             // dtpDesde
             // 
+            this.dtpDesde.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(301, 55);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(200, 26);
+            this.dtpDesde.Size = new System.Drawing.Size(140, 26);
             this.dtpDesde.TabIndex = 17;
             // 
             // dtpHasta
             // 
+            this.dtpHasta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(301, 107);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(200, 26);
+            this.dtpHasta.Size = new System.Drawing.Size(140, 26);
             this.dtpHasta.TabIndex = 18;
             // 
             // lblDesde
@@ -150,7 +155,7 @@
             // 
             this.lblCambios.AutoSize = true;
             this.lblCambios.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCambios.Location = new System.Drawing.Point(514, 114);
+            this.lblCambios.Location = new System.Drawing.Point(480, 113);
             this.lblCambios.Name = "lblCambios";
             this.lblCambios.Size = new System.Drawing.Size(207, 15);
             this.lblCambios.TabIndex = 21;

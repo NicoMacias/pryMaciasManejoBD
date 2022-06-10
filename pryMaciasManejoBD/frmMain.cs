@@ -48,13 +48,19 @@ namespace pryMaciasManejoBD
 
         private void tsmSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult salir = MessageBox.Show("Seguro que quieres salir de la aplicacion?",
+                "Salir",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (salir == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
         }
 
         private void chbMusica_CheckedChanged(object sender, EventArgs e)
         {
-            SoundPlayer Player = new SoundPlayer();
-            Player.SoundLocation = Application.StartupPath + "\\Dale-bo.wav";
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = Application.StartupPath + "\\Dale-bo.wav";
             Bitmap fondoBoca = new Bitmap(Application.StartupPath + "\\messi-bostero.jpeg");
             Icon iconoBoca = new Icon(Application.StartupPath + "\\escudo-boca.ico");
             Bitmap fondoMessi = new Bitmap(Application.StartupPath + "\\messi-logo.jpg");
@@ -62,7 +68,7 @@ namespace pryMaciasManejoBD
 
             if (chbMusica.Checked)
             {   
-                Player.Play();
+                player.Play();
                 this.BackgroundImage = fondoBoca;
                 this.Icon = iconoBoca;
                 tmrFecha.Enabled = false;
@@ -86,7 +92,7 @@ namespace pryMaciasManejoBD
             }
             else
             {
-                Player.Stop();
+                player.Stop();
                 this.BackgroundImage = fondoMessi;
                 this.Icon = iconoMessi;
                 tmrFecha.Enabled = true;
@@ -109,6 +115,5 @@ namespace pryMaciasManejoBD
                 lblMusica.ForeColor = Color.White;
             }
         }
-
     }
 }

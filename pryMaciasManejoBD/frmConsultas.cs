@@ -18,81 +18,80 @@ namespace pryMaciasManejoBD
             InitializeComponent();
         }
 
-        OleDbConnection objConexion;
-        OleDbDataAdapter objAdaptador;
-        DataSet objDataSet;
+        OleDbConnection connection;
+        OleDbDataAdapter dataAdapter;
+        DataSet dataSet;
 
         private void btnMostrarDGV_Click(object sender, EventArgs e)
         {
-            objConexion = new OleDbConnection();
+            connection = new OleDbConnection();
 
             try
             {
-                string Ruta = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
-                objConexion.ConnectionString = Ruta;
-                objConexion.Open();
+                connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
+                connection.Open();
 
-                objAdaptador = new OleDbDataAdapter();
-                objDataSet = new DataSet();
-                string consulta;
+                dataAdapter = new OleDbDataAdapter();
+                dataSet = new DataSet();
+                string sql;
 
                 if (cboTablas.SelectedIndex == 0)
                 {
-                    consulta = "Select *From Categorías";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Categorías");
-                    objAdaptador.Fill(objDataSet.Tables["Categorías"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Categorías"];
+                    sql = "Select *From Categorías";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Categorías");
+                    dataAdapter.Fill(dataSet.Tables["Categorías"]);
+                    dgvTablas.DataSource = dataSet.Tables["Categorías"];
                 }
                 else if (cboTablas.SelectedIndex == 1)
                 {
-                    consulta = "Select *From Clientes";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Clientes");
-                    objAdaptador.Fill(objDataSet.Tables["Clientes"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Clientes"];
+                    sql = "Select *From Clientes";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Clientes");
+                    dataAdapter.Fill(dataSet.Tables["Clientes"]);
+                    dgvTablas.DataSource = dataSet.Tables["Clientes"];
                 }
                 else if (cboTablas.SelectedIndex == 2)
                 {
-                    consulta = "Select *From [Detalles de pedidos]";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Detalles de pedidos");
-                    objAdaptador.Fill(objDataSet.Tables["Detalles de pedidos"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Detalles de pedidos"];
+                    sql = "Select *From [Detalles de pedidos]";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Detalles de pedidos");
+                    dataAdapter.Fill(dataSet.Tables["Detalles de pedidos"]);
+                    dgvTablas.DataSource = dataSet.Tables["Detalles de pedidos"];
                 }
                 else if (cboTablas.SelectedIndex == 3)
                 {
-                    consulta = "Select IdEmpleado, Apellidos, Nombre, Cargo, Tratamiento, FechaNacimiento, " +
+                    sql = "Select IdEmpleado, Apellidos, Nombre, Cargo, Tratamiento, FechaNacimiento, " +
                         "FechaContratación, Dirección, Ciudad, Región, CódPostal, País, TelDomicilio, Extensión, " +
                         "Notas, Jefe From Empleados";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Empleados");
-                    objAdaptador.Fill(objDataSet.Tables["Empleados"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Empleados"];
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Empleados");
+                    dataAdapter.Fill(dataSet.Tables["Empleados"]);
+                    dgvTablas.DataSource = dataSet.Tables["Empleados"];
                 }
                 else if (cboTablas.SelectedIndex == 4)
                 {
-                    consulta = "Select *From Pedidos";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Pedidos");
-                    objAdaptador.Fill(objDataSet.Tables["Pedidos"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Pedidos"];
+                    sql = "Select *From Pedidos";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Pedidos");
+                    dataAdapter.Fill(dataSet.Tables["Pedidos"]);
+                    dgvTablas.DataSource = dataSet.Tables["Pedidos"];
                 }
                 else if (cboTablas.SelectedIndex == 5)
                 {
-                    consulta = "Select *From Productos";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Productos");
-                    objAdaptador.Fill(objDataSet.Tables["Productos"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Productos"];
+                    sql = "Select *From Productos";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Productos");
+                    dataAdapter.Fill(dataSet.Tables["Productos"]);
+                    dgvTablas.DataSource = dataSet.Tables["Productos"];
                 }
                 else if (cboTablas.SelectedIndex == 6)
                 {
-                    consulta = "Select *From Proveedores";
-                    objAdaptador = new OleDbDataAdapter(consulta, objConexion);
-                    objDataSet.Tables.Add("Proveedores");
-                    objAdaptador.Fill(objDataSet.Tables["Proveedores"]);
-                    dgvTablas.DataSource = objDataSet.Tables["Proveedores"];
+                    sql = "Select *From Proveedores";
+                    dataAdapter = new OleDbDataAdapter(sql, connection);
+                    dataSet.Tables.Add("Proveedores");
+                    dataAdapter.Fill(dataSet.Tables["Proveedores"]);
+                    dgvTablas.DataSource = dataSet.Tables["Proveedores"];
                 }
             }
             catch (Exception mensaje)

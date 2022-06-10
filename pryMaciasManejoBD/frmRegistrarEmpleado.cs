@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Drawing.Imaging;
-using System.IO;
 
 namespace pryMaciasManejoBD
 {
@@ -25,15 +23,9 @@ namespace pryMaciasManejoBD
             tmrFecha.Enabled = true;
         }
 
-        OleDbConnection objConexion;
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            OleDbConnection objConexion = new OleDbConnection();
-
-            //MemoryStream ms = new MemoryStream();
-            //ptbFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //byte[] foto = ms.ToArray();
+            OleDbConnection connection = new OleDbConnection();
 
             DialogResult resultado = MessageBox.Show("Seguro que quiere registrar los siguientes datos?" + "\n" + "\n" +
                 "- Apellido: " + txtApellido.Text + "\n" + "- Nombre: " + txtNombre.Text + "\n" + "- Cargo: " +
@@ -48,9 +40,8 @@ namespace pryMaciasManejoBD
             {
                 try
                 {
-                    string Ruta = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
-                    objConexion.ConnectionString = Ruta;
-                    objConexion.Open();
+                    connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
+                    connection.Open();
 
                     string sql = "INSERT INTO Empleados (Apellidos, Nombre, Cargo, Tratamiento, FechaNacimiento, FechaContratación," +
                         "Dirección, Ciudad, Región, CódPostal, País, TelDomicilio, Extensión, Foto, Notas, Jefe) VALUES(";
@@ -71,11 +62,11 @@ namespace pryMaciasManejoBD
                     sql += "'" + txtNotas.Text + "', ";
                     sql += "'" + cboJefe.SelectedIndex + "') ";
 
-                    OleDbCommand objComando = new OleDbCommand();
-                    objComando.Connection = objConexion;
-                    objComando.CommandText = @sql;
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connection;
+                    command.CommandText = @sql;
 
-                    if (objComando.ExecuteNonQuery() > 0)
+                    if (command.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("El empleado se ha registrado exitosamente!", "Empleado registrado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,7 +77,7 @@ namespace pryMaciasManejoBD
                             MessageBoxIcon.Information);
                     }
 
-                    objConexion.Close();
+                    connection.Close();
 
                     txtApellido.Text = "";
                     txtNombre.Text = "";

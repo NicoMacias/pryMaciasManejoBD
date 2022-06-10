@@ -67,6 +67,7 @@
             this.dgvTablas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablas.Location = new System.Drawing.Point(12, 88);
             this.dgvTablas.Name = "dgvTablas";
+            this.dgvTablas.ReadOnly = true;
             this.dgvTablas.Size = new System.Drawing.Size(776, 350);
             this.dgvTablas.TabIndex = 6;
             // 

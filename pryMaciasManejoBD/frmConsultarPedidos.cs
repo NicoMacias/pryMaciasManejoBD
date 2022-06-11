@@ -36,8 +36,8 @@ namespace pryMaciasManejoBD
 
                     sql = "select * from Pedidos WHERE FechaPedido BETWEEN @fechadesde AND @fechahasta";
                     command = new OleDbCommand(sql, connection);
-                    command.Parameters.AddWithValue("@fechadesde", dtpDesde.Value);
-                    command.Parameters.AddWithValue("@fechahasta", dtpHasta.Value);
+                    command.Parameters.AddWithValue("@fechadesde", dtpDesde.Value.Date);
+                    command.Parameters.AddWithValue("@fechahasta", dtpHasta.Value.Date);
 
                     dataAdapter.SelectCommand = command;
 

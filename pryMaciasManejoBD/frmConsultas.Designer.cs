@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultas));
             this.cboTablas = new System.Windows.Forms.ComboBox();
             this.dgvTablas = new System.Windows.Forms.DataGridView();
-            this.btnMostrarDGV = new System.Windows.Forms.Button();
             this.lblSeleccione = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.stsFecha = new System.Windows.Forms.StatusStrip();
@@ -56,10 +55,11 @@
             "Pedidos",
             "Productos",
             "Proveedores"});
-            this.cboTablas.Location = new System.Drawing.Point(244, 45);
+            this.cboTablas.Location = new System.Drawing.Point(315, 45);
             this.cboTablas.Name = "cboTablas";
             this.cboTablas.Size = new System.Drawing.Size(158, 28);
             this.cboTablas.TabIndex = 5;
+            this.cboTablas.SelectedIndexChanged += new System.EventHandler(this.cboTablas_SelectedIndexChanged);
             // 
             // dgvTablas
             // 
@@ -71,23 +71,11 @@
             this.dgvTablas.Size = new System.Drawing.Size(776, 350);
             this.dgvTablas.TabIndex = 6;
             // 
-            // btnMostrarDGV
-            // 
-            this.btnMostrarDGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMostrarDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarDGV.Location = new System.Drawing.Point(418, 45);
-            this.btnMostrarDGV.Name = "btnMostrarDGV";
-            this.btnMostrarDGV.Size = new System.Drawing.Size(188, 28);
-            this.btnMostrarDGV.TabIndex = 7;
-            this.btnMostrarDGV.Text = "Mostrar Base de Datos";
-            this.btnMostrarDGV.UseVisualStyleBackColor = true;
-            this.btnMostrarDGV.Click += new System.EventHandler(this.btnMostrarDGV_Click);
-            // 
             // lblSeleccione
             // 
             this.lblSeleccione.AutoSize = true;
             this.lblSeleccione.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccione.Location = new System.Drawing.Point(156, 9);
+            this.lblSeleccione.Location = new System.Drawing.Point(137, 9);
             this.lblSeleccione.Name = "lblSeleccione";
             this.lblSeleccione.Size = new System.Drawing.Size(508, 24);
             this.lblSeleccione.TabIndex = 8;
@@ -135,7 +123,6 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.stsFecha);
             this.Controls.Add(this.lblSeleccione);
-            this.Controls.Add(this.btnMostrarDGV);
             this.Controls.Add(this.dgvTablas);
             this.Controls.Add(this.cboTablas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -157,7 +144,6 @@
 
         private System.Windows.Forms.ComboBox cboTablas;
         private System.Windows.Forms.DataGridView dgvTablas;
-        private System.Windows.Forms.Button btnMostrarDGV;
         private System.Windows.Forms.Label lblSeleccione;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.StatusStrip stsFecha;

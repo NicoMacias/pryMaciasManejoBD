@@ -293,8 +293,14 @@
             // 
             // nudMinimo
             // 
+            this.nudMinimo.DecimalPlaces = 2;
             this.nudMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudMinimo.Location = new System.Drawing.Point(110, 523);
+            this.nudMinimo.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudMinimo.Name = "nudMinimo";
             this.nudMinimo.Size = new System.Drawing.Size(140, 26);
             this.nudMinimo.TabIndex = 37;
@@ -302,11 +308,22 @@
             // 
             // nudMaximo
             // 
+            this.nudMaximo.DecimalPlaces = 2;
             this.nudMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudMaximo.Location = new System.Drawing.Point(110, 556);
+            this.nudMaximo.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudMaximo.Name = "nudMaximo";
             this.nudMaximo.Size = new System.Drawing.Size(140, 26);
             this.nudMaximo.TabIndex = 38;
+            this.nudMaximo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudMaximo.ValueChanged += new System.EventHandler(this.nudMinimo_ValueChanged);
             // 
             // frmConsultarPedidos

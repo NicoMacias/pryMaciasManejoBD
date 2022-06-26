@@ -25,8 +25,7 @@ namespace pryMaciasManejoBD
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            OleDbConnection connection = new OleDbConnection();
-
+            // Dialog que pregunta si queres registrar el empleado con todos esos datos.
             DialogResult resultado = MessageBox.Show("Seguro que quiere registrar los siguientes datos?" + "\n" + "\n" +
                 "- Apellido: " + txtApellido.Text + "\n" + "- Nombre: " + txtNombre.Text + "\n" + "- Cargo: " +
                 txtCargo.Text + "\n" + "- Tratamiento: " + txtTratamiento.Text + "\n" + "- Fecha de nacimiento: " + dtpNacimiento.Value + "\n"
@@ -36,13 +35,17 @@ namespace pryMaciasManejoBD
                     "\n" + "- Telefono: " + txtTelefono.Text + "\n" + "- Extension: " + txtExtension.Text + "\n", "Datos correctos",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
+
+            // Si pusiste que si en el dialog se ejecuta esto.
             if (resultado == DialogResult.OK)
             {
                 try
                 {
+                    OleDbConnection connection = new OleDbConnection();
                     connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                     connection.Open();
 
+                    // Se agregar todos los valores al comando sql separados por renglon para que quede mas ordenado.
                     string sql = "INSERT INTO Empleados (Apellidos, Nombre, Cargo, Tratamiento, FechaNacimiento, FechaContratación," +
                         "Dirección, Ciudad, Región, CódPostal, País, TelDomicilio, Extensión, Foto, Notas, Jefe) VALUES(";
                     sql += "'" + txtApellido.Text + "', ";
@@ -79,6 +82,7 @@ namespace pryMaciasManejoBD
 
                     connection.Close();
 
+                    // Se limpia el formulario.
                     txtApellido.Text = "";
                     txtNombre.Text = "";
                     txtCargo.Text = "";
@@ -106,7 +110,7 @@ namespace pryMaciasManejoBD
                 }
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -127,6 +131,7 @@ namespace pryMaciasManejoBD
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
+            // Para que no te habilite el boton registrar hasta que no esten todos los datos cargados
             if (txtApellido.Text == "" | txtNombre.Text == "" | txtCargo.Text == "" | txtTratamiento.Text == ""
                  | cboJefe.SelectedItem == null | txtNotas.Text == "" | txtDireccion.Text == "" | txtCiudad.Text == ""
                  | txtRegion.Text == "" | txtCodigoPostal.Text == "" | txtPais.Text == "" | txtTelefono.MaskFull == false
@@ -165,6 +170,37 @@ namespace pryMaciasManejoBD
         private void tmrFecha_Tick(object sender, EventArgs e)
         {
             tslFecha.Text = DateTime.Now.ToString();
+        }
+
+        private void dtpNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpNacimiento.Value >= DateTime.Now)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser mayor al dia de hoy", "Error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
+                dtpNacimiento.Value = DateTime.Now;
+            }
+        }
+
+        private void ptbFlechaSiguiente_Click(object sender, EventArgs e)
+        {
+            tbcRegistro.SelectedIndex = 1;
+        }
+
+        private void lblSiguiente_Click(object sender, EventArgs e)
+        {
+            tbcRegistro.SelectedIndex = 1;
+        }
+
+        private void lblAnterior_Click(object sender, EventArgs e)
+        {
+            tbcRegistro.SelectedIndex = 0;
+        }
+
+        private void ptbFlechaAnterior_Click(object sender, EventArgs e)
+        {
+            tbcRegistro.SelectedIndex = 0;
         }
     }
 }

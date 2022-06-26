@@ -27,19 +27,14 @@ namespace pryMaciasManejoBD
         {
             tmrFecha.Enabled = true;
 
+            // Carga los combo box que se usan para filtrar con sus respectivos datos.
             OleDbConnection connection = new OleDbConnection();
             connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
             connection.Open();
 
-            string sql;
-
-            OleDbCommand command;
-
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-            sql = "SELECT Clientes.IdCliente, Pedidos.CiudadDestinatario, Pedidos.RegiónDestinatario, Pedidos.CódPostalDestinatario," +
+            string sql = "SELECT Clientes.IdCliente, Pedidos.CiudadDestinatario, Pedidos.RegiónDestinatario, Pedidos.CódPostalDestinatario," +
                 " Pedidos.PaísDestinatario FROM Clientes, Pedidos";
-            command = new OleDbCommand(sql, connection);
+            OleDbCommand command = new OleDbCommand(sql, connection);
 
             OleDbDataReader dataReader = command.ExecuteReader();
 
@@ -55,12 +50,12 @@ namespace pryMaciasManejoBD
                     cboCiudad.Items.Add(dataReader["CiudadDestinatario"].ToString());
                 }
 
-                if (!cboRegion.Items.Contains(dataReader["RegiónDestinatario"].ToString()))
+                if (!cboRegion.Items.Contains(dataReader["RegiónDestinatario"].ToString()) & dataReader["RegiónDestinatario"].ToString() != "")
                 {
                     cboRegion.Items.Add(dataReader["RegiónDestinatario"].ToString());
                 }
 
-                if (!cboCodPostal.Items.Contains(dataReader["CódPostalDestinatario"].ToString()))
+                if (!cboCodPostal.Items.Contains(dataReader["CódPostalDestinatario"].ToString()) & dataReader["CódPostalDestinatario"].ToString() != "")
                 {
                     cboCodPostal.Items.Add(dataReader["CódPostalDestinatario"].ToString());
                 }
@@ -70,13 +65,12 @@ namespace pryMaciasManejoBD
                     cboPais.Items.Add(dataReader["PaísDestinatario"].ToString());
                 }
             }
-
             connection.Close();
 
-            DataSet dataSet;
-            dataSet = new DataSet();
+            // Carga la tabla de pedidos completa al iniciar el formulario.
+            DataSet dataSet = new DataSet();
             sql = "Select *From Pedidos";
-            dataAdapter = new OleDbDataAdapter(sql, connection);
+            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sql, connection);
             dataSet.Tables.Add("Pedidos");
             dataAdapter.Fill(dataSet.Tables["Pedidos"]);
             dgvTablas.DataSource = dataSet.Tables["Pedidos"];
@@ -84,23 +78,18 @@ namespace pryMaciasManejoBD
 
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun el nombre del cliente seleccionado en el combo box.
             try
             {
                 OleDbConnection connection = new OleDbConnection();
                 connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                 connection.Open();
 
-                string sql;
-
-                OleDbCommand command;
-
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                sql = "SELECT * FROM Pedidos WHERE IdCliente = @cliente";
-                command = new OleDbCommand(sql, connection);
-
+                string sql = "SELECT * FROM Pedidos WHERE IdCliente = @cliente";
+                OleDbCommand command = new OleDbCommand(sql, connection);
                 command.Parameters.AddWithValue("@cliente", cboCliente.SelectedItem.ToString());
 
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                 dataAdapter.SelectCommand = command;
 
                 DataSet dataSet = new DataSet();
@@ -109,6 +98,7 @@ namespace pryMaciasManejoBD
                 dgvTablas.DataMember = "tabla";
 
                 connection.Close();
+
             }
             catch (Exception)
             {
@@ -118,27 +108,23 @@ namespace pryMaciasManejoBD
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
 
         private void cboCiudad_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun la ciudad seleccionada en el combo box.
             try
             {
                 OleDbConnection connection = new OleDbConnection();
                 connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                 connection.Open();
 
-                string sql;
-
-                OleDbCommand command;
-
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                sql = "SELECT * FROM Pedidos WHERE CiudadDestinatario = @ciudad";
-                command = new OleDbCommand(sql, connection);
-
+                string sql = "SELECT * FROM Pedidos WHERE CiudadDestinatario = @ciudad";
+                OleDbCommand command = new OleDbCommand(sql, connection);
                 command.Parameters.AddWithValue("@ciudad", cboCiudad.SelectedItem.ToString());
 
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                 dataAdapter.SelectCommand = command;
 
                 DataSet dataSet = new DataSet();
@@ -160,6 +146,7 @@ namespace pryMaciasManejoBD
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun la fecha del pedido establecida entre ambos date time picker.
             if (dtpDesde.Value <= dtpHasta.Value)
             {
                 try
@@ -168,17 +155,12 @@ namespace pryMaciasManejoBD
                     connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                     connection.Open();
 
-                    string sql;
-
-                    OleDbCommand command;
-
-                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                    sql = "select * from Pedidos WHERE FechaPedido BETWEEN @fechadesde AND @fechahasta";
-                    command = new OleDbCommand(sql, connection);
+                    string sql = "select * from Pedidos WHERE FechaPedido BETWEEN @fechadesde AND @fechahasta";
+                    OleDbCommand command = new OleDbCommand(sql, connection);
                     command.Parameters.AddWithValue("@fechadesde", dtpDesde.Value.Date);
                     command.Parameters.AddWithValue("@fechahasta", dtpHasta.Value.Date);
 
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                     dataAdapter.SelectCommand = command;
 
                     DataSet dataSet = new DataSet();
@@ -206,23 +188,19 @@ namespace pryMaciasManejoBD
 
         private void cboRegion_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun la region seleccionada en el combo box.
             try
             {
                 OleDbConnection connection = new OleDbConnection();
                 connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                 connection.Open();
 
-                string sql;
-
-                OleDbCommand command;
-
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                sql = "SELECT * FROM Pedidos WHERE RegiónDestinatario = @region";
-                command = new OleDbCommand(sql, connection);
-
+                string sql = "SELECT * FROM Pedidos WHERE RegiónDestinatario = @region";
+                OleDbCommand command = new OleDbCommand(sql, connection);
                 command.Parameters.AddWithValue("@region", cboRegion.SelectedItem.ToString());
 
+
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                 dataAdapter.SelectCommand = command;
 
                 DataSet dataSet = new DataSet();
@@ -244,23 +222,19 @@ namespace pryMaciasManejoBD
 
         private void cboCodPostal_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun el codigo postal seleccionado en el combo box.
             try
             {
                 OleDbConnection connection = new OleDbConnection();
                 connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                 connection.Open();
 
-                string sql;
-
-                OleDbCommand command;
-
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                sql = "SELECT * FROM Pedidos WHERE CódPostalDestinatario = @codPostal";
-                command = new OleDbCommand(sql, connection);
-
+                string sql = "SELECT * FROM Pedidos WHERE CódPostalDestinatario = @codPostal";
+                OleDbCommand command = new OleDbCommand(sql, connection);
                 command.Parameters.AddWithValue("@codPostal", cboCodPostal.SelectedItem.ToString());
 
+
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                 dataAdapter.SelectCommand = command;
 
                 DataSet dataSet = new DataSet();
@@ -282,23 +256,19 @@ namespace pryMaciasManejoBD
 
         private void cboPais_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun el pais seleccionado en el combo box.
             try
             {
                 OleDbConnection connection = new OleDbConnection();
                 connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                 connection.Open();
 
-                string sql;
-
-                OleDbCommand command;
-
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                sql = "SELECT * FROM Pedidos WHERE PaísDestinatario = @pais";
-                command = new OleDbCommand(sql, connection);
-
+                string sql = "SELECT * FROM Pedidos WHERE PaísDestinatario = @pais";
+                OleDbCommand command = new OleDbCommand(sql, connection);
                 command.Parameters.AddWithValue("@pais", cboPais.SelectedItem.ToString());
 
+
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                 dataAdapter.SelectCommand = command;
 
                 DataSet dataSet = new DataSet();
@@ -320,6 +290,7 @@ namespace pryMaciasManejoBD
 
         private void nudMinimo_ValueChanged(object sender, EventArgs e)
         {
+            // Cambia la tabla segun los valores seleccionados en los numeric up down.
             if (nudMinimo.Value <= nudMaximo.Value)
             {
                 try
@@ -328,19 +299,13 @@ namespace pryMaciasManejoBD
                     connection.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source =" + Application.StartupPath + "\\NEPTUNO.accdb";
                     connection.Open();
 
-                    string sql;
-
-                    OleDbCommand command;
-
-                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
-
-                    sql = "select * from Pedidos WHERE Cargo BETWEEN @cargominimo AND @cargomaximo";
-                    command = new OleDbCommand(sql, connection);
+                    string sql = "select * from Pedidos WHERE Cargo BETWEEN @cargominimo AND @cargomaximo";
+                    OleDbCommand command = new OleDbCommand(sql, connection);
                     command.Parameters.AddWithValue("@cargominimo", nudMinimo.Value);
                     command.Parameters.AddWithValue("@cargomaximo", nudMaximo.Value);
 
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
                     dataAdapter.SelectCommand = command;
-
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet, "tabla");
                     dgvTablas.DataSource = dataSet;

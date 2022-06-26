@@ -33,6 +33,8 @@
             this.lblRegistro = new System.Windows.Forms.Label();
             this.tbcRegistro = new System.Windows.Forms.TabControl();
             this.tbcInformacion = new System.Windows.Forms.TabPage();
+            this.lblSiguiente = new System.Windows.Forms.Label();
+            this.ptbFlechaSiguiente = new System.Windows.Forms.PictureBox();
             this.cboJefe = new System.Windows.Forms.ComboBox();
             this.ptbFoto = new System.Windows.Forms.PictureBox();
             this.dtpContratacion = new System.Windows.Forms.DateTimePicker();
@@ -73,11 +75,15 @@
             this.tmrFecha = new System.Windows.Forms.Timer(this.components);
             this.sstFecha = new System.Windows.Forms.StatusStrip();
             this.tslFecha = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblAnterior = new System.Windows.Forms.Label();
+            this.ptbFlechaAnterior = new System.Windows.Forms.PictureBox();
             this.tbcRegistro.SuspendLayout();
             this.tbcInformacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFlechaSiguiente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).BeginInit();
             this.tbcDireccion.SuspendLayout();
             this.sstFecha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFlechaAnterior)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistro
@@ -105,6 +111,8 @@
             // tbcInformacion
             // 
             this.tbcInformacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbcInformacion.Controls.Add(this.lblSiguiente);
+            this.tbcInformacion.Controls.Add(this.ptbFlechaSiguiente);
             this.tbcInformacion.Controls.Add(this.cboJefe);
             this.tbcInformacion.Controls.Add(this.ptbFoto);
             this.tbcInformacion.Controls.Add(this.dtpContratacion);
@@ -132,6 +140,28 @@
             this.tbcInformacion.UseVisualStyleBackColor = true;
             this.tbcInformacion.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
+            // lblSiguiente
+            // 
+            this.lblSiguiente.AutoSize = true;
+            this.lblSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSiguiente.Location = new System.Drawing.Point(583, 313);
+            this.lblSiguiente.Name = "lblSiguiente";
+            this.lblSiguiente.Size = new System.Drawing.Size(76, 20);
+            this.lblSiguiente.TabIndex = 27;
+            this.lblSiguiente.Text = "Siguiente";
+            this.lblSiguiente.Click += new System.EventHandler(this.lblSiguiente_Click);
+            // 
+            // ptbFlechaSiguiente
+            // 
+            this.ptbFlechaSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("ptbFlechaSiguiente.Image")));
+            this.ptbFlechaSiguiente.Location = new System.Drawing.Point(559, 255);
+            this.ptbFlechaSiguiente.Name = "ptbFlechaSiguiente";
+            this.ptbFlechaSiguiente.Size = new System.Drawing.Size(126, 55);
+            this.ptbFlechaSiguiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbFlechaSiguiente.TabIndex = 26;
+            this.ptbFlechaSiguiente.TabStop = false;
+            this.ptbFlechaSiguiente.Click += new System.EventHandler(this.ptbFlechaSiguiente_Click);
+            // 
             // cboJefe
             // 
             this.cboJefe.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -148,7 +178,7 @@
             "Leverling, Janet",
             "Peacock, Margaret",
             "Suyama, Michael"});
-            this.cboJefe.Location = new System.Drawing.Point(280, 224);
+            this.cboJefe.Location = new System.Drawing.Point(518, 67);
             this.cboJefe.Name = "cboJefe";
             this.cboJefe.Size = new System.Drawing.Size(200, 28);
             this.cboJefe.TabIndex = 7;
@@ -159,7 +189,7 @@
             this.ptbFoto.BackColor = System.Drawing.Color.Black;
             this.ptbFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbFoto.Location = new System.Drawing.Point(518, 69);
+            this.ptbFoto.Location = new System.Drawing.Point(280, 226);
             this.ptbFoto.Name = "ptbFoto";
             this.ptbFoto.Size = new System.Drawing.Size(200, 103);
             this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -186,12 +216,13 @@
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(200, 26);
             this.dtpNacimiento.TabIndex = 5;
+            this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
             // 
             // txtNotas
             // 
             this.txtNotas.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotas.Location = new System.Drawing.Point(518, 224);
+            this.txtNotas.Location = new System.Drawing.Point(518, 146);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
             this.txtNotas.Size = new System.Drawing.Size(200, 103);
@@ -202,7 +233,7 @@
             // 
             this.lblNotas.AutoSize = true;
             this.lblNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotas.Location = new System.Drawing.Point(535, 197);
+            this.lblNotas.Location = new System.Drawing.Point(535, 119);
             this.lblNotas.Name = "lblNotas";
             this.lblNotas.Size = new System.Drawing.Size(51, 20);
             this.lblNotas.TabIndex = 21;
@@ -212,7 +243,7 @@
             // 
             this.lblFoto.AutoSize = true;
             this.lblFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoto.Location = new System.Drawing.Point(538, 37);
+            this.lblFoto.Location = new System.Drawing.Point(300, 194);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(42, 20);
             this.lblFoto.TabIndex = 19;
@@ -222,7 +253,7 @@
             // 
             this.lblJefe.AutoSize = true;
             this.lblJefe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJefe.Location = new System.Drawing.Point(299, 197);
+            this.lblJefe.Location = new System.Drawing.Point(537, 40);
             this.lblJefe.Name = "lblJefe";
             this.lblJefe.Size = new System.Drawing.Size(40, 20);
             this.lblJefe.TabIndex = 17;
@@ -331,6 +362,8 @@
             // tbcDireccion
             // 
             this.tbcDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbcDireccion.Controls.Add(this.lblAnterior);
+            this.tbcDireccion.Controls.Add(this.ptbFlechaAnterior);
             this.tbcDireccion.Controls.Add(this.txtCodigoPostal);
             this.tbcDireccion.Controls.Add(this.txtExtension);
             this.tbcDireccion.Controls.Add(this.txtTelefono);
@@ -499,7 +532,7 @@
             this.btnVolver.TabIndex = 22;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.button1_Click);
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnLimpiar
             // 
@@ -550,6 +583,28 @@
             this.tslFecha.Size = new System.Drawing.Size(12, 17);
             this.tslFecha.Text = "-";
             // 
+            // lblAnterior
+            // 
+            this.lblAnterior.AutoSize = true;
+            this.lblAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnterior.Location = new System.Drawing.Point(583, 313);
+            this.lblAnterior.Name = "lblAnterior";
+            this.lblAnterior.Size = new System.Drawing.Size(65, 20);
+            this.lblAnterior.TabIndex = 29;
+            this.lblAnterior.Text = "Anterior";
+            this.lblAnterior.Click += new System.EventHandler(this.lblAnterior_Click);
+            // 
+            // ptbFlechaAnterior
+            // 
+            this.ptbFlechaAnterior.Image = ((System.Drawing.Image)(resources.GetObject("ptbFlechaAnterior.Image")));
+            this.ptbFlechaAnterior.Location = new System.Drawing.Point(559, 255);
+            this.ptbFlechaAnterior.Name = "ptbFlechaAnterior";
+            this.ptbFlechaAnterior.Size = new System.Drawing.Size(126, 55);
+            this.ptbFlechaAnterior.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbFlechaAnterior.TabIndex = 28;
+            this.ptbFlechaAnterior.TabStop = false;
+            this.ptbFlechaAnterior.Click += new System.EventHandler(this.ptbFlechaAnterior_Click);
+            // 
             // frmRegistrarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,11 +627,13 @@
             this.tbcRegistro.ResumeLayout(false);
             this.tbcInformacion.ResumeLayout(false);
             this.tbcInformacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFlechaSiguiente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFoto)).EndInit();
             this.tbcDireccion.ResumeLayout(false);
             this.tbcDireccion.PerformLayout();
             this.sstFecha.ResumeLayout(false);
             this.sstFecha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFlechaAnterior)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,5 +684,9 @@
         private System.Windows.Forms.Timer tmrFecha;
         private System.Windows.Forms.StatusStrip sstFecha;
         private System.Windows.Forms.ToolStripStatusLabel tslFecha;
+        private System.Windows.Forms.Label lblSiguiente;
+        private System.Windows.Forms.PictureBox ptbFlechaSiguiente;
+        private System.Windows.Forms.Label lblAnterior;
+        private System.Windows.Forms.PictureBox ptbFlechaAnterior;
     }
 }

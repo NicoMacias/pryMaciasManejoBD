@@ -161,7 +161,7 @@
             this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(35, 164);
+            this.cboCliente.Location = new System.Drawing.Point(35, 166);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(215, 26);
             this.cboCliente.TabIndex = 22;
@@ -171,7 +171,7 @@
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(32, 131);
+            this.lblCliente.Location = new System.Drawing.Point(32, 133);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(164, 21);
             this.lblCliente.TabIndex = 23;
@@ -181,7 +181,7 @@
             // 
             this.lblCiudad.AutoSize = true;
             this.lblCiudad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCiudad.Location = new System.Drawing.Point(32, 203);
+            this.lblCiudad.Location = new System.Drawing.Point(32, 275);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(164, 21);
             this.lblCiudad.TabIndex = 25;
@@ -192,7 +192,7 @@
             this.cboCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCiudad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCiudad.FormattingEnabled = true;
-            this.cboCiudad.Location = new System.Drawing.Point(35, 236);
+            this.cboCiudad.Location = new System.Drawing.Point(35, 308);
             this.cboCiudad.Name = "cboCiudad";
             this.cboCiudad.Size = new System.Drawing.Size(215, 26);
             this.cboCiudad.TabIndex = 24;
@@ -202,7 +202,7 @@
             // 
             this.lblCodPostal.AutoSize = true;
             this.lblCodPostal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodPostal.Location = new System.Drawing.Point(32, 347);
+            this.lblCodPostal.Location = new System.Drawing.Point(32, 417);
             this.lblCodPostal.Name = "lblCodPostal";
             this.lblCodPostal.Size = new System.Drawing.Size(223, 21);
             this.lblCodPostal.TabIndex = 29;
@@ -213,7 +213,7 @@
             this.cboCodPostal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCodPostal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCodPostal.FormattingEnabled = true;
-            this.cboCodPostal.Location = new System.Drawing.Point(35, 380);
+            this.cboCodPostal.Location = new System.Drawing.Point(35, 450);
             this.cboCodPostal.Name = "cboCodPostal";
             this.cboCodPostal.Size = new System.Drawing.Size(215, 26);
             this.cboCodPostal.TabIndex = 28;
@@ -223,7 +223,7 @@
             // 
             this.lblRegion.AutoSize = true;
             this.lblRegion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegion.Location = new System.Drawing.Point(32, 275);
+            this.lblRegion.Location = new System.Drawing.Point(32, 346);
             this.lblRegion.Name = "lblRegion";
             this.lblRegion.Size = new System.Drawing.Size(161, 21);
             this.lblRegion.TabIndex = 27;
@@ -234,7 +234,7 @@
             this.cboRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRegion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRegion.FormattingEnabled = true;
-            this.cboRegion.Location = new System.Drawing.Point(35, 308);
+            this.cboRegion.Location = new System.Drawing.Point(35, 379);
             this.cboRegion.Name = "cboRegion";
             this.cboRegion.Size = new System.Drawing.Size(215, 26);
             this.cboRegion.TabIndex = 26;
@@ -244,7 +244,7 @@
             // 
             this.lblPais.AutoSize = true;
             this.lblPais.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(32, 419);
+            this.lblPais.Location = new System.Drawing.Point(33, 204);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(141, 21);
             this.lblPais.TabIndex = 31;
@@ -255,7 +255,7 @@
             this.cboPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPais.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPais.FormattingEnabled = true;
-            this.cboPais.Location = new System.Drawing.Point(35, 452);
+            this.cboPais.Location = new System.Drawing.Point(36, 237);
             this.cboPais.Name = "cboPais";
             this.cboPais.Size = new System.Drawing.Size(215, 26);
             this.cboPais.TabIndex = 30;
@@ -356,6 +356,7 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.dgvTablas);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmConsultarPedidos";

@@ -61,18 +61,23 @@ namespace pryMaciasManejoBD
         {
             SoundPlayer player = new SoundPlayer();
             player.SoundLocation = Application.StartupPath + "\\Dale-bo.wav";
+
             Bitmap fondoBoca = new Bitmap(Application.StartupPath + "\\messi-bostero.jpeg");
             Icon iconoBoca = new Icon(Application.StartupPath + "\\escudo-boca.ico");
+
             Bitmap fondoMessi = new Bitmap(Application.StartupPath + "\\messi-logo.jpg");
             Icon iconoMessi = new Icon(Application.StartupPath + "\\messi-icono.ico");
 
             if (chbMusica.Checked)
             {   
                 player.Play();
+
                 this.BackgroundImage = fondoBoca;
                 this.Icon = iconoBoca;
+
                 tmrFecha.Enabled = false;
                 tslFecha.Text = "09/12/2018 07:02:00 p. m.";
+
                 sstFecha.BackColor = Color.Yellow;
                 tslFecha.ForeColor = Color.Blue;
 
@@ -80,7 +85,6 @@ namespace pryMaciasManejoBD
                 mstMenu.ForeColor = Color.Blue;
 
                 tsmMenu.ForeColor = Color.Blue;
-
                 tsmRegistrar.ForeColor = Color.Yellow;
                 tsmRegistrar.BackColor = Color.Blue;
                 tsmBasesDeDatos.ForeColor = Color.Yellow;
@@ -93,10 +97,13 @@ namespace pryMaciasManejoBD
             else
             {
                 player.Stop();
+
                 this.BackgroundImage = fondoMessi;
                 this.Icon = iconoMessi;
+
                 tmrFecha.Enabled = true;
                 tslFecha.Text = DateTime.Now.ToString();
+
                 sstFecha.BackColor = Color.White;
                 tslFecha.ForeColor = Color.Black;
                 mstMenu.BackColor = Color.White;

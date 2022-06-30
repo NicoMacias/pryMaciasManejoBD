@@ -99,6 +99,7 @@ namespace pryMaciasManejoBD
 
                 connection.Close();
 
+
             }
             catch (Exception)
             {
@@ -108,7 +109,6 @@ namespace pryMaciasManejoBD
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
 
         private void cboCiudad_SelectedIndexChanged(object sender, EventArgs e)
@@ -333,5 +333,6 @@ namespace pryMaciasManejoBD
         {
             this.Close();
         }
+
     }
 }

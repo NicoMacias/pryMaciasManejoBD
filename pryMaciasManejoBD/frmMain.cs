@@ -57,44 +57,14 @@ namespace pryMaciasManejoBD
 
         }
 
-        private void chbMusica_CheckedChanged(object sender, EventArgs e)
+        SoundPlayer player = new SoundPlayer();
+
+        private void rbtNormal_CheckedChanged(object sender, EventArgs e)
         {
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = Application.StartupPath + "\\Dale-bo.wav";
-
-            Bitmap fondoBoca = new Bitmap(Application.StartupPath + "\\messi-bostero.jpeg");
-            Icon iconoBoca = new Icon(Application.StartupPath + "\\escudo-boca.ico");
-
             Bitmap fondoMessi = new Bitmap(Application.StartupPath + "\\messi-logo.jpg");
             Icon iconoMessi = new Icon(Application.StartupPath + "\\messi-icono.ico");
 
-            if (chbMusica.Checked)
-            {   
-                player.Play();
-
-                this.BackgroundImage = fondoBoca;
-                this.Icon = iconoBoca;
-
-                tmrFecha.Enabled = false;
-                tslFecha.Text = "09/12/2018 07:02:00 p. m.";
-
-                sstFecha.BackColor = Color.Yellow;
-                tslFecha.ForeColor = Color.Blue;
-
-                mstMenu.BackColor = Color.Yellow;
-                mstMenu.ForeColor = Color.Blue;
-
-                tsmMenu.ForeColor = Color.Blue;
-                tsmRegistrar.ForeColor = Color.Yellow;
-                tsmRegistrar.BackColor = Color.Blue;
-                tsmBasesDeDatos.ForeColor = Color.Yellow;
-                tsmBasesDeDatos.BackColor = Color.Blue;
-                tsmPedidos.ForeColor = Color.Yellow;
-                tsmPedidos.BackColor = Color.Blue;
-
-                lblMusica.ForeColor = Color.Yellow;
-            }
-            else
+            if (rbtNormal.Checked == true)
             {
                 player.Stop();
 
@@ -117,9 +87,107 @@ namespace pryMaciasManejoBD
                 tsmBasesDeDatos.BackColor = Color.White;
                 tsmPedidos.ForeColor = Color.Black;
                 tsmPedidos.BackColor = Color.White;
+            }
+        }
 
-                lblMusica.BackColor = Color.Transparent;
-                lblMusica.ForeColor = Color.White;
+        private void rbtBoca_CheckedChanged(object sender, EventArgs e)
+        {
+            player.SoundLocation = Application.StartupPath + "\\Dale-bo.wav";
+
+            Bitmap fondoBoca = new Bitmap(Application.StartupPath + "\\messi-bostero.jpeg");
+            Icon iconoBoca = new Icon(Application.StartupPath + "\\escudo-boca.ico");
+
+            if (rbtBoca.Checked == true)
+            {
+                player.Play();
+
+                this.BackgroundImage = fondoBoca;
+                this.Icon = iconoBoca;
+
+                tmrFecha.Enabled = false;
+                tslFecha.Text = "09/12/2018 07:02:00 p. m.";
+
+                sstFecha.BackColor = Color.Yellow;
+                tslFecha.ForeColor = Color.Blue;
+
+                mstMenu.BackColor = Color.Yellow;
+                mstMenu.ForeColor = Color.Blue;
+
+                tsmMenu.ForeColor = Color.Blue;
+                tsmRegistrar.ForeColor = Color.Yellow;
+                tsmRegistrar.BackColor = Color.Blue;
+                tsmBasesDeDatos.ForeColor = Color.Yellow;
+                tsmBasesDeDatos.BackColor = Color.Blue;
+                tsmPedidos.ForeColor = Color.Yellow;
+                tsmPedidos.BackColor = Color.Blue;
+            }
+        }
+
+        private void rbtTalleres_CheckedChanged(object sender, EventArgs e)
+        {
+            player.SoundLocation = Application.StartupPath + "\\talleres.wav";
+
+            Bitmap fondoTalleres = new Bitmap(Application.StartupPath + "\\messidelat.jpg");
+            Icon iconoTalleres = new Icon(Application.StartupPath + "\\escudo-talleres.ico");
+
+            if (rbtTalleres.Checked == true)
+            {
+                player.Play();
+
+                this.BackgroundImage = fondoTalleres;
+                this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.Icon = iconoTalleres;
+
+                tmrFecha.Enabled = false;
+                tslFecha.Text = "05/07/1998 19:13";
+
+                sstFecha.BackColor = Color.White;
+                tslFecha.ForeColor = Color.Blue;
+
+                mstMenu.BackColor = Color.White;
+                mstMenu.ForeColor = Color.Blue;
+
+                tsmMenu.ForeColor = Color.Blue;
+                tsmRegistrar.ForeColor = Color.Blue;
+                tsmRegistrar.BackColor = Color.White;
+                tsmBasesDeDatos.ForeColor = Color.Blue;
+                tsmBasesDeDatos.BackColor = Color.White;
+                tsmPedidos.ForeColor = Color.Blue;
+                tsmPedidos.BackColor = Color.White;
+            }
+        }
+
+        private void rbtRiver_CheckedChanged(object sender, EventArgs e)
+        {
+            player.SoundLocation = Application.StartupPath + "\\river.wav";
+
+            Bitmap fondoTalleres = new Bitmap(Application.StartupPath + "\\messideriver.jpg");
+            Icon iconoTalleres = new Icon(Application.StartupPath + "\\escudo-river.ico");
+
+            if (rbtRiver.Checked == true)
+            {
+                player.Play();
+
+                this.BackgroundImage = fondoTalleres;
+                this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.Icon = iconoTalleres;
+
+                tmrFecha.Enabled = false;
+                tslFecha.Text = "05/07/1998 19:13";
+
+                sstFecha.BackColor = Color.White;
+                tslFecha.ForeColor = Color.Red;
+
+                mstMenu.BackColor = Color.White;
+                mstMenu.ForeColor = Color.Red;
+
+                tsmMenu.ForeColor = Color.Red;
+                tsmRegistrar.ForeColor = Color.Red;
+                tsmRegistrar.BackColor = Color.White;
+                tsmBasesDeDatos.ForeColor = Color.Red;
+                tsmBasesDeDatos.BackColor = Color.White;
+                tsmPedidos.ForeColor = Color.Red;
+                tsmPedidos.BackColor = Color.White;
             }
         }
     }

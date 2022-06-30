@@ -41,10 +41,14 @@ namespace pryMaciasManejoBD
             this.sstFecha = new System.Windows.Forms.StatusStrip();
             this.tslFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrFecha = new System.Windows.Forms.Timer(this.components);
-            this.chbMusica = new System.Windows.Forms.CheckBox();
-            this.lblMusica = new System.Windows.Forms.Label();
+            this.rbtNormal = new System.Windows.Forms.RadioButton();
+            this.rbtBoca = new System.Windows.Forms.RadioButton();
+            this.rbtRiver = new System.Windows.Forms.RadioButton();
+            this.rbtTalleres = new System.Windows.Forms.RadioButton();
+            this.gpbInterfaz = new System.Windows.Forms.GroupBox();
             this.mstMenu.SuspendLayout();
             this.sstFecha.SuspendLayout();
+            this.gpbInterfaz.SuspendLayout();
             this.SuspendLayout();
             // 
             // mstMenu
@@ -135,27 +139,68 @@ namespace pryMaciasManejoBD
             // 
             this.tmrFecha.Tick += new System.EventHandler(this.tmrFecha_Tick);
             // 
-            // chbMusica
+            // rbtNormal
             // 
-            this.chbMusica.Cursor = System.Windows.Forms.Cursors.No;
-            this.chbMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbMusica.Location = new System.Drawing.Point(178, 193);
-            this.chbMusica.Name = "chbMusica";
-            this.chbMusica.Size = new System.Drawing.Size(13, 12);
-            this.chbMusica.TabIndex = 6;
-            this.chbMusica.UseVisualStyleBackColor = true;
-            this.chbMusica.CheckedChanged += new System.EventHandler(this.chbMusica_CheckedChanged);
+            this.rbtNormal.AutoSize = true;
+            this.rbtNormal.Location = new System.Drawing.Point(14, 22);
+            this.rbtNormal.Name = "rbtNormal";
+            this.rbtNormal.Size = new System.Drawing.Size(58, 17);
+            this.rbtNormal.TabIndex = 8;
+            this.rbtNormal.TabStop = true;
+            this.rbtNormal.Text = "Normal";
+            this.rbtNormal.UseVisualStyleBackColor = true;
+            this.rbtNormal.CheckedChanged += new System.EventHandler(this.rbtNormal_CheckedChanged);
             // 
-            // lblMusica
+            // rbtBoca
             // 
-            this.lblMusica.BackColor = System.Drawing.Color.Transparent;
-            this.lblMusica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMusica.ForeColor = System.Drawing.Color.White;
-            this.lblMusica.Location = new System.Drawing.Point(26, 162);
-            this.lblMusica.Name = "lblMusica";
-            this.lblMusica.Size = new System.Drawing.Size(177, 56);
-            this.lblMusica.TabIndex = 7;
-            this.lblMusica.Text = "Pibe aca activas el modo boca ----->";
+            this.rbtBoca.AutoSize = true;
+            this.rbtBoca.Location = new System.Drawing.Point(14, 68);
+            this.rbtBoca.Name = "rbtBoca";
+            this.rbtBoca.Size = new System.Drawing.Size(80, 17);
+            this.rbtBoca.TabIndex = 10;
+            this.rbtBoca.TabStop = true;
+            this.rbtBoca.Text = "Modo Boca";
+            this.rbtBoca.UseVisualStyleBackColor = true;
+            this.rbtBoca.CheckedChanged += new System.EventHandler(this.rbtBoca_CheckedChanged);
+            // 
+            // rbtRiver
+            // 
+            this.rbtRiver.AutoSize = true;
+            this.rbtRiver.Location = new System.Drawing.Point(14, 91);
+            this.rbtRiver.Name = "rbtRiver";
+            this.rbtRiver.Size = new System.Drawing.Size(80, 17);
+            this.rbtRiver.TabIndex = 12;
+            this.rbtRiver.TabStop = true;
+            this.rbtRiver.Text = "Modo River";
+            this.rbtRiver.UseVisualStyleBackColor = true;
+            this.rbtRiver.CheckedChanged += new System.EventHandler(this.rbtRiver_CheckedChanged);
+            // 
+            // rbtTalleres
+            // 
+            this.rbtTalleres.AutoSize = true;
+            this.rbtTalleres.Location = new System.Drawing.Point(14, 45);
+            this.rbtTalleres.Name = "rbtTalleres";
+            this.rbtTalleres.Size = new System.Drawing.Size(92, 17);
+            this.rbtTalleres.TabIndex = 13;
+            this.rbtTalleres.TabStop = true;
+            this.rbtTalleres.Text = "Modo Talleres";
+            this.rbtTalleres.UseVisualStyleBackColor = true;
+            this.rbtTalleres.CheckedChanged += new System.EventHandler(this.rbtTalleres_CheckedChanged);
+            // 
+            // gpbInterfaz
+            // 
+            this.gpbInterfaz.BackColor = System.Drawing.Color.Transparent;
+            this.gpbInterfaz.Controls.Add(this.rbtTalleres);
+            this.gpbInterfaz.Controls.Add(this.rbtRiver);
+            this.gpbInterfaz.Controls.Add(this.rbtBoca);
+            this.gpbInterfaz.Controls.Add(this.rbtNormal);
+            this.gpbInterfaz.ForeColor = System.Drawing.Color.White;
+            this.gpbInterfaz.Location = new System.Drawing.Point(617, 42);
+            this.gpbInterfaz.Name = "gpbInterfaz";
+            this.gpbInterfaz.Size = new System.Drawing.Size(117, 121);
+            this.gpbInterfaz.TabIndex = 14;
+            this.gpbInterfaz.TabStop = false;
+            this.gpbInterfaz.Text = "Interfaz";
             // 
             // frmMain
             // 
@@ -163,8 +208,7 @@ namespace pryMaciasManejoBD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(746, 398);
-            this.Controls.Add(this.chbMusica);
-            this.Controls.Add(this.lblMusica);
+            this.Controls.Add(this.gpbInterfaz);
             this.Controls.Add(this.sstFecha);
             this.Controls.Add(this.mstMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -180,6 +224,8 @@ namespace pryMaciasManejoBD
             this.mstMenu.PerformLayout();
             this.sstFecha.ResumeLayout(false);
             this.sstFecha.PerformLayout();
+            this.gpbInterfaz.ResumeLayout(false);
+            this.gpbInterfaz.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,8 +242,11 @@ namespace pryMaciasManejoBD
         private System.Windows.Forms.ToolStripMenuItem tsmBasesDeDatos;
         private System.Windows.Forms.ToolStripMenuItem tsmPedidos;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;
-        private System.Windows.Forms.CheckBox chbMusica;
-        private System.Windows.Forms.Label lblMusica;
+        private System.Windows.Forms.RadioButton rbtNormal;
+        private System.Windows.Forms.RadioButton rbtBoca;
+        private System.Windows.Forms.RadioButton rbtRiver;
+        private System.Windows.Forms.RadioButton rbtTalleres;
+        private System.Windows.Forms.GroupBox gpbInterfaz;
     }
 }
 
